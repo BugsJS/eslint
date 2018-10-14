@@ -145,6 +145,10 @@ ruleTester.run("space-before-keywords", rule, {
         { code: "var foo =\nfunction bar () {}", options: never },
         { code: "function foo () { return function () {} }", options: never },
         { code: "var foo = { foo:function () {} }", options: never },
+        { code: "var foo = {get bar() {}}" },
+        { code: "var foo = {get bar() {}}", options: never },
+        { code: "var foo = {set bar(v) {}}" },
+        { code: "var foo = {set bar(v) {}}", options: never },
         // YieldExpression
         {
             code: "function* foo() { yield 0; }",
